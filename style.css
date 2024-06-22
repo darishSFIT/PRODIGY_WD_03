@@ -1,0 +1,95 @@
+body {
+    font-family: "Arial", sans-serif;
+    background-color: #191919;
+    
+}
+section {
+    text-align: center;
+}
+.game--container {
+    display: grid;
+    border-radius: 10px;
+    grid-template-columns: repeat(3, auto);
+    width: 450px;
+    height: 450px;
+    margin: 25px auto;
+    background-color: white;
+    position: relative; /* Added this line */
+}
+.game--title {
+    color: rgb(0, 0, 0);
+    background-color: yellow;
+    background: linear-gradient(to right, rgb(255, 255, 184),yellow,rgb(255, 255, 184));
+}
+.game--status {
+    color: white;
+    margin-bottom: -10px;
+    padding-top: 10px;
+}
+.game--restart {
+    background-color: yellow;
+    border: none;
+    color: black;
+    padding: 10px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 24px;
+    border-radius: 50px;
+    margin-top: -10px;
+    transition: 1s;
+}
+
+.game--restart:hover{
+    transform: scale(1.03);
+    background-color: rgb(186, 186, 0);
+    color:rgb(0, 0, 0);
+    outline: white;
+}
+
+.cell {
+    align-items: center;
+    font-family: "Permanent Marker", cursive;
+    width: 142px;
+    height: 142px;
+    box-shadow: 0 0 0 1px #333333;
+    border: 4px solid #333333;
+    cursor: pointer;
+    line-height: 100px;
+    font-size: 100px;
+    display: grid;
+    transition: 500ms;
+}
+
+.cell:hover{
+    background-color: #ffffeb;
+}
+/* Other styles remain the same */
+
+.line {
+    position: absolute;
+    background-color: rgb(255, 0, 0);
+    backdrop-filter: blur(15px);
+    
+    height: 10px;
+    width: 450px;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    z-index: 1;
+    display: none;
+    border-radius: 10px;
+    border: 2px solid rgba(0, 0, 0, 0.297);  
+
+}
+
+.horizontal-0 { top: 75px; }
+.horizontal-1 { top: 225px; }
+.horizontal-2 { top: 375px; }
+
+.vertical-0 { width: 10px; height: 450px; top: 0; left: 75px; transform: translateX(-50%); }
+.vertical-1 { width: 10px; height: 450px; top: 0; left: 225px; transform: translateX(-50%); }
+.vertical-2 { width: 10px; height: 450px; top: 0; left: 375px; transform: translateX(-50%); }
+
+.diagonal-0 { width: 450px; height: 10px; transform: rotate(45deg); top: 221px; left: 0; }
+.diagonal-1 { width: 450px; height: 10px; transform: rotate(-45deg); top: 221px; right: 0; }
